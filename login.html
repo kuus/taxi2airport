@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Taxi 2 Airport</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="kuus <kunderikuus@gmail.com> (http://kunderikuus.net)">
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel='stylesheet' href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css' />
+    <!-- @dev just for demo -->
+    <link rel="stylesheet" href="styles/app.css?v=a53c9871d8e817f100dc350eddba8f4d"> </head>
+  <body class="page--login">
+    <div class="c-offcanvas-content-wrap">
+      <!-- partial: header -->
+      <header class="header">
+        <nav class="navbar navbar-toggleable-md">
+          <div class="container">
+            <button class="navbar-toggler navbar-toggler-right btn js-offcanvas-trigger" data-offcanvas-trigger="mobilemenu" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> Menu </button>
+            <div class="navbar-header">
+              <a href="" class="navbar-brand">taxi2airport.com
+                <img class="logo" src="images/T2A-color.svg" alt="">
+              </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="">Schedule a taxi</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbar_support" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                  <div class="dropdown-menu" aria-labelledby="navbar_support">
+                    <a class="dropdown-item" href="support.html">Customer support</a>
+                    <a class="dropdown-item" href="#modal__editbooking" data-toggle="modal">Edit booking</a>
+                    <a class="dropdown-item" href="#modal__changepassword" data-toggle="modal">Change password</a>
+                    <a class="dropdown-item" href="#modal__saveprofile" data-toggle="modal">Save profile</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="" id="navbar_workwithus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Work with us</a>
+                  <div class="dropdown-menu" aria-labelledby="navbar_workwithus">
+                    <a class="dropdown-item" href="join-driver.html">Become a Partner</a>
+                    <a class="dropdown-item" href="join-affiliates.html">Become an Affiliate</a>
+                    <a class="dropdown-item" href="join-agents.html">Partner login</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <ul class="navbar-nav ml-auto navbar__login">
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">
+                  <i class="icon icon-profile"></i> Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- endpartial: header -->
+      <!--[if lt IE 9]>
+      <div class="alert alert-warning browserupgrade text-center"><p><small>You are using an <strong>outdated</strong> browser. Please <a class="text-danger" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</small></p></div>
+    <![endif]-->
+      <div class="container booking__steps booking__steps--2b">
+        <div class="row">
+          <div class="col-md-6 offset-md-3 col-lg-5 offset-lg-2">
+            <div class="my-4">
+              <!-- macro: booking__backnext -->
+              <nav class="booking__backnext ">
+                <a href="/register.html" class="btn btn-link link-iconed booking__back">
+                  <!-- btn-disabled -->
+                  <i class="icon icon-arrow_back"></i>
+                  <span>Back</span>
+                </a>
+              </nav>
+              <!-- endmacro -->
+            </div>
+            <form class="form-validate booking__login">
+              <h2 class="h4 text-dark font-sans font-weight-normal">Login into your T2A account:</h2>
+              <!-- macro: form_group -->
+              <div class="form-group has-feedback has-danger">
+                <label for="email" class="control-label">Email address:</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="i.e. john@mail.com">
+                <div class="form-control-feedback">This is an error message</div>
+              </div>
+              <!-- endmacro: form_group -->
+              <!-- macro: form_group -->
+              <div class="form-group has-feedback">
+                <label for="password" class="control-label">Password:</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder=""> </div>
+              <!-- endmacro: form_group -->
+              <!-- macro: form_group -->
+              <div class="form-group has-feedback">
+                <div class="checkbox">
+                  <input type="checkbox" name="remember" id="remember" class="styled">
+                  <label class="control-label" for="remember">Remember me</label>
+                </div>
+                <input type="checkbox" name="remember" id="remember" class="form-control" placeholder=""> </div>
+              <!-- endmacro: form_group -->
+              <div class="mt-3 mb-5">
+                <nav class="booking__backnext justify-content-between">
+                  <a href="#" class="btn btn-link">Need help?</a>
+                  <a href="customer-dashboard.html" class="btn btn-lg btn-accent">Login</a>
+                </nav>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- partial: mobilemenu -->
+    <aside id="mobilemenu" class="js-offcanvas mobilemenu" data-offcanvas-options='{ "modifiers": "right,push" }'>
+      <button class="js-offcanvas-close btn mobilemenu__close">
+        <i class="icon icon-close"></i>
+      </button>
+      <nav>
+        <div class="mobilemenu__lang">
+          <div class="mobilemenu__lang-current" data-toggle="collapse" data-target="#lang-selector">
+            <i class="flagsvg flagsvg-gb"></i>
+            <span class="mobilemenu__lang-text">English</span>
+            <i class="icon"></i>
+          </div>
+          <div id="lang-selector" class="mobilemenu__lang-list collapse">
+            <a class="mobilemenu__lang-link" href="#nl" title="Dutch">
+              <i class="flagsvg flagsvg-nl"></i> Dutch </a>
+            <a class="mobilemenu__lang-link" href="#fr" title="French">
+              <i class="flagsvg flagsvg-fr"></i> French </a>
+            <a class="mobilemenu__lang-link" href="#es" title="Spanish">
+              <i class="flagsvg flagsvg-es"></i> Spanish </a>
+            <a class="mobilemenu__lang-link" href="#be" title="Belgium">
+              <i class="flagsvg flagsvg-be"></i> Belgium </a>
+            <a class="mobilemenu__lang-link" href="#pt" title="Português">
+              <i class="flagsvg flagsvg-pt"></i> Português </a>
+          </div>
+        </div>
+        <ul class="mobilemenu__list">
+          <li class="mobilemenu__item">
+            <img class="mobilemenu__img" src="images/T2A-Mark-black.svg">
+            <a href="" class="mobilemenu__link">Schedule a Taxi</a>
+          </li>
+          <li class="mobilemenu__item">
+            <img class="mobilemenu__img" src="images/icons/profile.svg">
+            <a href="login.html" class="mobilemenu__link">Login</a>
+          </li>
+          <li class="mobilemenu__item">
+            <div class="mobilemenu__heading">Support</div>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="" class="mobilemenu__link">Customer Service</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="faq.html" class="mobilemenu__link">FAQs</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="" class="mobilemenu__link">Feedback</a>
+          </li>
+          <li class="mobilemenu__item">
+            <div class="mobilemenu__heading">Work with us</div>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-driver.html" class="mobilemenu__link">Become a Partner</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-affiliates.html" data-toggle="modal" class="mobilemenu__link" title="Become an Affiliate">Edit booking</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-partner.html" data-toggle="modal" class="mobilemenu__link" title="Careers">Change password</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="#modal__saveprofile" data-toggle="modal" class="mobilemenu__link" title="Save profile (modal sample)">Save profile</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- endpartial: mobilemenu -->
+    <script>
+      (function(b, o, i, l, e, r)
+      {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] = function()
+        {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;v=3&amp;libraries=places"></script>
+    <script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.rawgit.com/moment/moment/develop/locale/it.js"></script>
+    <!-- @dev just for demo -->
+    <script src="scripts/app.js?v=2b1b3471f35d55ffb82fd5f97b7e5744"></script>
+  </body>
+</html>

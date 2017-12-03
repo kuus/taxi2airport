@@ -1,0 +1,286 @@
+{
+  "languages": [{
+      "code": "gb",
+      "name": "English"
+    }, {
+      "code": "nl",
+      "name": "Dutch"
+    }, {
+      "code": "fr",
+      "name": "French"
+    }, {
+      "code": "es",
+      "name": "Spanish"
+    }, {
+      "code": "be",
+      "name": "Belgium"
+    }, {
+      "code": "pt",
+      "name": "Português"
+    }
+  ],
+  "customer": {
+    "tabs": [{
+      "slug": "customer-dashboard",
+      "title": "Dashboard"
+    }, {
+      "slug": "customer-transfers",
+      "title": "Transfers"
+    }, {
+      "slug": "customer-profile",
+      "title": "Profile"
+    }]
+  },
+  "transfers": [{
+    "from": "Schipol Airport (AMS)",
+    "to": "Julius Pergerstraat 139",
+    "date": "29 May 2017",
+    "time": "10:00",
+    "status": "upcoming",
+    "statusClass": "success"
+  }, {
+    "from": "Julius Pergerstraat 139",
+    "to": "Schipol Airport (AMS)",
+    "date": "29 May 2017",
+    "time": "19:12",
+    "status": "completed",
+    "statusClass": "grey"
+  }, {
+    "from": "Schipol Airport (AMS)",
+    "to": "Julius Pergerstraat 139",
+    "date": "31 May 2017",
+    "time": "10:00",
+    "status": "cancelled",
+    "statusClass": "red"
+  }, {
+    "from": "Schipol Airport (AMS)",
+    "to": "Julius Pergerstraat 139",
+    "date": "29 May 2017",
+    "time": "10:00",
+    "status": "upcoming",
+    "statusClass": "success"
+  }, {
+    "from": "Julius Pergerstraat 139",
+    "to": "Schipol Airport (AMS)",
+    "date": "29 May 2017",
+    "time": "19:12",
+    "status": "completed",
+    "statusClass": "grey"
+  }, {
+    "from": "Schipol Airport (AMS)",
+    "to": "Julius Pergerstraat 139",
+    "date": "31 May 2017",
+    "time": "10:00",
+    "status": "cancelled",
+    "statusClass": "red"
+  }],
+  "faqs": [{
+      "id": "modifications_cancellations",
+      "title": "Modifications / Cancellations",
+      "content": [{
+        "question": "My flight has been cancelled and I no longer require a transfer. Can I cancel it?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "How can I change my reservation?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "My flight has changed. Can I reschedule my transfer?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }]
+    }, {
+      "id": "payment",
+      "title": "Payment",
+      "content": [{
+        "question": "My flight has been cancelled and I no longer require a transfer. Can I cancel it?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "How can I change my reservation?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "My flight has changed. Can I reschedule my transfer?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "How do I know my card and personal details are safe?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }]
+    }, {
+      "id": "booking_details",
+      "title": "Booking Details",
+      "content": [{
+        "question": "Will anyone else be travelling in the vehicle I book?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "What if I need wheelchair space?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "There will be children in my group. Can you supply child seats?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "What should I take as proof of the pre-booked reservation for the driver?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "My payment confirmation and/or booking voucher haven't arrived by email. What should I do?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "Where will I meet the driver when I arrive?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }]
+    }, {
+      "id": "communications",
+      "title": "Communications",
+      "content": [{
+        "question": "My flight has been cancelled and I no longer require a transfer. Can I cancel it?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "There will be children in my group. Can you supply child seats?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "What should I take as proof of the pre-booked reservation for the driver?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "My payment confirmation and/or booking voucher haven't arrived by email. What should I do?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "How can I change my reservation?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }, {
+        "question": "My flight has changed. Can I reschedule my transfer?",
+        "answer": "Yes, in accordance with our terms and conditions."
+      }]
+    }
+  ],
+  "social": [{
+    "title": "Facebook",
+    "icon": "brand-facebook",
+    "url": "https://www.facebook.com/taxi2airportcom/"
+  }, {
+    "title": "Twitter",
+    "icon": "brand-twitter",
+    "url": "https://twitter.com/Taxi2Airport"
+  }, {
+    "title": "LinkedIn",
+    "icon": "brand-linkedin",
+    "url": "https://www.linkedin.com/company-beta/2657964/"
+  }, {
+    "title": "Google +",
+    "icon": "brand-google-plus",
+    "url": "https://plus.google.com/112745390609204203588"
+  }],
+  "reasons_why": [{
+      "title": "Save up to 65%",
+      "text": "We will find you the cheapest airport transfers with our verified partners!"
+    }, {
+      "title": "Over 250,000 transfers",
+      "text": "We continue to get customers to and from the airport on time!"
+    }, {
+      "title": "Available around the globe",
+      "text": "We have partners in many popular cities around the world."
+    }, {
+      "title": "24/7 Customer Support",
+      "text": "We are always available to help you with your transfer"
+    }
+  ],
+  "what_is_affiliate_list": [{
+      "title": "Over 200 airports worldwide"
+    }, {
+      "title": "Available in over 50 countries"
+    }, {
+      "title": "Extensive network of affiliates"
+    }
+  ],
+  "about_us_list": [{
+      "title": "Easy and reliable booking through our website, 24/7"
+    },{
+      "title": "No more worries in finding a taxi upon arrival"
+    },{
+      "title": "Your dedicated driver will meet you at the meetingpoint"
+    }, {
+      "title": "Fixed prices, no hidden costs"
+    }
+  ],
+  "home_list": [{
+    "img": "heart-2",
+    "icon_color": "danger",
+    "title": "Refer a friend",
+    "text": "Earn credits towards your next taxi"
+  }, {
+    "img": "business-pin",
+    "icon_color": "danger",
+    "title": "Travelling for business?",
+    "text": "See our enterprise features"
+  }],
+  "top_airports": [{
+    "name": "London Heathrow"
+  }, {
+    "name": "Schipol Airport"
+  }, {
+    "name": "Oslo Airport"
+  }, {
+    "name": "Adolfo Suarez Madrid-Barajas"
+  }, {
+    "name": "Istanbul Ataturk"
+  }, {
+    "name": "JFK International Airport"
+  }, {
+    "name": "Leonardo da Vinci-Fiumicino"
+  }, {
+    "name": "London Heathrow"
+  }],
+  "booking_options": [{
+    "info": {
+      "title": "Meet & Greet",
+      "icon": "stops",
+      "text": "The driver will be waiting for you with a sign"
+    },
+    "field": {
+      "type": "checkbox",
+      "name": "meet_great"
+    },
+    "fee_unit": "7,50"
+  }, {
+    "info": {
+      "title": "Baby Seat",
+      "icon": "stops",
+      "text": "For children up to 22kg"
+    },
+    "field": {
+      "type": "checkbox",
+      "name": "baby_seat"
+    },
+    "fee_unit": "7,50"
+  }, {
+    "info": {
+      "title": "Booster Seat",
+      "icon": "stops",
+      "text": "For children up to 22kg"
+    },
+    "field": {
+      "type": "checkbox",
+      "name": "booster_Seat"
+    },
+    "fee_unit": "7,50"
+  }, {
+    "info": {
+      "title": "Special Luggage",
+      "icon": "stops",
+      "text": "For children up to 22kg"
+    },
+    "field": {
+      "type": "checkbox",
+      "name": "special_luggage"
+    },
+    "fee_unit": "7,50"
+  }, {
+    "info": {
+      "title": "Pets",
+      "icon": "stops",
+      "text": "[Any special requirements?]"
+    },
+    "field": {
+      "type": "checkbox",
+      "name": "pets"
+    },
+    "fee_unit": "7,50"
+  }],
+  "airport_text": "<p>When it comes to business trips or tours to Prague, all required services are available now online. The only thing to do is to reserve transfer from Prague airport through our international system of taxi lookup and reservation. Highly qualified English-speaking taxi drivers will help you to look about in the strange environment in a polite and kind manner; they will take you to any point of destination avoiding rash to enjoy sightseeing and to be in time for important negotiations or meetings.</p><p>If you intend to get to the place of residence on arrival, it is worth reserving a taxi in Prague airport. It is very easy to place an order: you only need to complete a form at the website specifying your travel areas, number of passengers and your contact information. Our managers will contact clients prior to the travel and inform on the driver data who is assigned to meet them. In case if the group includes younger children this should be specially indicated in the order form with the purpose to have a child seat in the car available</p><p>The special form available at the website page is useful for clients to find out the price for a taxi in Prague pointing departure and arrival places. This procedure is simple and appropriate since it make possible to arrange travelling expenditure in good time.</p><p>Clients might want to order a transfer in Prague from the Prague Airport to any place in the city and beyond it. When leaving Czech Republic, our taxi will take you to the airport from any region. Clients may enjoy all comfortable vehicles offered for any budget: from economy-class vehicles for a single person or a small family to mini-buses to accommodate groups of up to 13 tourists. The most demanded routes from the airport include the way to Podebrady, Marianske Lazne, Cesky Krumlov and other Czech destinations, various round trips to enjoy sights of the city and country. As it is practiced elsewhere, a taxi driver meets clients at hotels, airports and other places of destination with their names put in the poster</p>"
+}

@@ -1,0 +1,382 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Taxi 2 Airport</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="kuus <kunderikuus@gmail.com> (http://kunderikuus.net)">
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel='stylesheet' href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css' />
+    <!-- @dev just for demo -->
+    <link rel="stylesheet" href="styles/app.css?v=a53c9871d8e817f100dc350eddba8f4d"> </head>
+  <body class="page--join page--join-affiliates">
+    <div class="c-offcanvas-content-wrap">
+      <!-- partial: header -->
+      <header class="header">
+        <nav class="navbar navbar-toggleable-md">
+          <div class="container">
+            <button class="navbar-toggler navbar-toggler-right btn js-offcanvas-trigger" data-offcanvas-trigger="mobilemenu" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> Menu </button>
+            <div class="navbar-header">
+              <a href="" class="navbar-brand">taxi2airport.com
+                <img class="logo" src="images/T2A-color.svg" alt="">
+              </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="">Schedule a taxi</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbar_support" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                  <div class="dropdown-menu" aria-labelledby="navbar_support">
+                    <a class="dropdown-item" href="support.html">Customer support</a>
+                    <a class="dropdown-item" href="#modal__editbooking" data-toggle="modal">Edit booking</a>
+                    <a class="dropdown-item" href="#modal__changepassword" data-toggle="modal">Change password</a>
+                    <a class="dropdown-item" href="#modal__saveprofile" data-toggle="modal">Save profile</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="" id="navbar_workwithus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Work with us</a>
+                  <div class="dropdown-menu" aria-labelledby="navbar_workwithus">
+                    <a class="dropdown-item" href="join-driver.html">Become a Partner</a>
+                    <a class="dropdown-item" href="join-affiliates.html">Become an Affiliate</a>
+                    <a class="dropdown-item" href="join-agents.html">Partner login</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <ul class="navbar-nav ml-auto navbar__login">
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">
+                  <i class="icon icon-profile"></i> Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- endpartial: header -->
+      <!--[if lt IE 9]>
+      <div class="alert alert-warning browserupgrade text-center"><p><small>You are using an <strong>outdated</strong> browser. Please <a class="text-danger" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</small></p></div>
+    <![endif]-->
+      <article class="container-fluid">
+        <div class="row content__row content__row--intro content__row--bordered">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 push-md-7 partnerprogram">
+                <img class="partnerprogram__img" src="images/icons/map-pin-red.svg">
+                <h2 class="partnerprogram__title">Affliliate Partner Program</h2>
+              </div>
+              <div class="col-md-7 pull-md-5">
+                <h1 class="page__header-title pb-2">Start earning commission through your website.</h1>
+                <h3 class="title--small py-3">Signing up is free, easy and instant!</h3>
+                <div class="d-flex">
+                  <a href="#" class="btn btn-wide btn-lg btn-accent">Start now</a>
+                  <a href="#" class="btn btn-wide btn-lg btn-outline-secondary">Tell me more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row content__row content__row--what">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 pb-4">
+                <h3 class="title text-dark">What is the Taxi2Airport.com Affiliate Partner Program?</h3>
+              </div>
+              <div class="col-lg-7">
+                <p>The Taxi2Airport.com Affiliate Partner Program gives you the unique opportunity to connect your business to a global taxi booking platform.</p>
+                <p>As a partner, you integrate our customer-facing product into your website and in return, earn a favorable commission for each booking made through it.</p>
+              </div>
+              <div class="col-lg-5">
+                <!-- macro: list__with_checkmarks -->
+                <ul class="list--with-checkmarks">
+                  <li>
+                    <h4 class="h5 font-sans text-dark">Over 200 airports worldwide</h4>
+                    <p></p>
+                  </li>
+                  <li>
+                    <h4 class="h5 font-sans text-dark">Available in over 50 countries</h4>
+                    <p></p>
+                  </li>
+                  <li>
+                    <h4 class="h5 font-sans text-dark">Extensive network of affiliates</h4>
+                    <p></p>
+                  </li>
+                </ul>
+                <!-- endmacro -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bg-red content__row content__row--offer">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="title--small">What do we offer?</h5>
+                <h3 class="title h1 mb-3 mb-md-4">Tailor-made for your needs</h3>
+              </div>
+              <!-- macro: feature -->
+              <div class="col-sm-4 media-feature">
+                <div class="feature-img-wrap">
+                  <i class="icon icon-phone feature-icon"></i>
+                </div>
+                <h4 class="title--small feature-title">24/7 Customer Service</h4>
+                <p>This is a description of this selling point</p>
+              </div>
+              <!-- endmacro -->
+              <!-- macro: feature -->
+              <div class="col-sm-4 media-feature">
+                <div class="feature-img-wrap">
+                  <i class="icon icon-graph-bar feature-icon"></i>
+                </div>
+                <h4 class="title--small feature-title">Custom reports &amp; Analytics</h4>
+                <p>This is a description of this selling point</p>
+              </div>
+              <!-- endmacro -->
+              <!-- macro: feature -->
+              <div class="col-sm-4 media-feature">
+                <div class="feature-img-wrap">
+                  <i class="icon icon-meter feature-icon"></i>
+                </div>
+                <h4 class="title--small feature-title">Optimised for conversion</h4>
+                <p>This is a description of this selling point</p>
+              </div>
+              <!-- endmacro -->
+            </div>
+          </div>
+        </div>
+        <!-- macro: content__row_getstarted -->
+        <form class="row content__row content__row--getstarted bg-grey">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8 offset-lg-2">
+                <h4 class="title--small title--red pb-4">Get Started Today</h4>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <!-- macro: form_group -->
+                    <div class="form-group has-feedback">
+                      <label for="first_name" class="control-label">First name:</label>
+                      <input type="text" name="first_name" id="first_name" class="form-control" placeholder="i.e. John"> </div>
+                    <!-- endmacro: form_group -->
+                  </div>
+                  <div class="col-lg-6">
+                    <!-- macro: form_group -->
+                    <div class="form-group has-feedback">
+                      <label for="last_name" class="control-label">Last name:</label>
+                      <input type="text" name="last_name" id="last_name" class="form-control" placeholder="i.e. Smith"> </div>
+                    <!-- endmacro: form_group -->
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <!-- macro: form_group -->
+                    <div class="form-group has-feedback has-danger">
+                      <label for="email" class="control-label">Email address:</label>
+                      <input type="email" name="email" id="email" class="form-control" placeholder="i.e. john@mail.com">
+                      <div class="form-control-feedback">This is an error message</div>
+                    </div>
+                    <!-- endmacro: form_group -->
+                  </div>
+                  <div class="col-lg-6">
+                    <!-- macro: form_group__phone -->
+                    <div class="form-group has-feedback">
+                      <label for="phone_prefix" class="control-label">Phone Number:</label>
+                      <div class="row">
+                        <div class="col-4">
+                          <input type="text" name="phone_prefix" id="phone_prefix" class="form-control" placeholder="NL +31" required> </div>
+                        <div class="col-8">
+                          <input type="number" name="phone_number" id="phone_number" class="form-control" placeholder="0011223344" required> </div>
+                      </div>
+                    </div>
+                    <!-- endmacro: form_group__phone -->
+                  </div>
+                </div>
+                <button class="btn btn-lg btn-accent">Sign up</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- endmacro: content__row_getstarted -->
+        <!-- macro: content__row_about -->
+        <div class="row content__row content__row--about">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8 offset-lg-2">
+                <h3 class="title text-dark pb-lg-3">About Taxi2Airport</h3>
+                <p class="readmore">Planning to go on holiday by plane, or perhaps on family visit or for another reason abroad? Then you probably need to go to the airport to catch your flight. But how will you get there? Letting someone bring you or pick you up is not
+                  always possible and parking your own car at the airport is not a cheap solution. Then you can choose for an airport transfer by an experience holiday taxi company. A taxi will pick you up at your home address whenever you want and will
+                  take you to the airport you need to go. TAXI2AIRPORT.COM stands for reliable service and security. Your transportation to the airport can’t start better; leave the rest to our airport shuttle. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- endmacro: content__row_about -->
+      </article>
+      <!-- partial: footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="row footer__top">
+            <div class="col-md-6">
+              <img src="images/T2A-white.svg" alt="Taxi2airport logo" width="206"> </div>
+            <div class="col-md-6 footer__top-links text-md-right hidden-sm-down">
+              <a href="">Schedule a taxi</a>
+              <a href="login.html">Login</a>
+            </div>
+            <div class="col-md-6 footer__top-links text-md-right hidden-md-up">
+              <a href="#">Customer Service</a>
+              <a href="about.html">About Us</a>
+            </div>
+          </div>
+          <nav class="row footer__middle">
+            <div class="col-md-4 hidden-sm-down">
+              <h4 class="footer__list-title">Support</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="#">Customer Service</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="faq.html">FAQs</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Feedback</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4 class="footer__list-title">Work with us</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="join-driver.html">Become a Partner</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="join-affiliates.html">Become an Affiliate</a>
+                </li>
+                <li class="hidden-md-up">
+                  <a class="footer__list-link" href="join-agents.html">Partner login</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Careers</a>
+                </li>
+                <li class="hidden-sm-down">
+                  <a class="footer__list-link" href="about.html">About Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4 class="footer__list-title">Legal</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="#">Terms and conditions</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="row footer__bottom">
+            <div class="col">
+              <strong>
+                <small>&copy; 2003 -
+                  <span id="copy-year">2017</span> by Taxi2airport B.V.
+                  <br>All rights reserved</small>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- endpartial: footer -->
+    </div>
+    <!-- partial: mobilemenu -->
+    <aside id="mobilemenu" class="js-offcanvas mobilemenu" data-offcanvas-options='{ "modifiers": "right,push" }'>
+      <button class="js-offcanvas-close btn mobilemenu__close">
+        <i class="icon icon-close"></i>
+      </button>
+      <nav>
+        <div class="mobilemenu__lang">
+          <div class="mobilemenu__lang-current" data-toggle="collapse" data-target="#lang-selector">
+            <i class="flagsvg flagsvg-gb"></i>
+            <span class="mobilemenu__lang-text">English</span>
+            <i class="icon"></i>
+          </div>
+          <div id="lang-selector" class="mobilemenu__lang-list collapse">
+            <a class="mobilemenu__lang-link" href="#nl" title="Dutch">
+              <i class="flagsvg flagsvg-nl"></i> Dutch </a>
+            <a class="mobilemenu__lang-link" href="#fr" title="French">
+              <i class="flagsvg flagsvg-fr"></i> French </a>
+            <a class="mobilemenu__lang-link" href="#es" title="Spanish">
+              <i class="flagsvg flagsvg-es"></i> Spanish </a>
+            <a class="mobilemenu__lang-link" href="#be" title="Belgium">
+              <i class="flagsvg flagsvg-be"></i> Belgium </a>
+            <a class="mobilemenu__lang-link" href="#pt" title="Português">
+              <i class="flagsvg flagsvg-pt"></i> Português </a>
+          </div>
+        </div>
+        <ul class="mobilemenu__list">
+          <li class="mobilemenu__item">
+            <img class="mobilemenu__img" src="images/T2A-Mark-black.svg">
+            <a href="" class="mobilemenu__link">Schedule a Taxi</a>
+          </li>
+          <li class="mobilemenu__item">
+            <img class="mobilemenu__img" src="images/icons/profile.svg">
+            <a href="login.html" class="mobilemenu__link">Login</a>
+          </li>
+          <li class="mobilemenu__item">
+            <div class="mobilemenu__heading">Support</div>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="" class="mobilemenu__link">Customer Service</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="faq.html" class="mobilemenu__link">FAQs</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="" class="mobilemenu__link">Feedback</a>
+          </li>
+          <li class="mobilemenu__item">
+            <div class="mobilemenu__heading">Work with us</div>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-driver.html" class="mobilemenu__link">Become a Partner</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-affiliates.html" data-toggle="modal" class="mobilemenu__link" title="Become an Affiliate">Edit booking</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-partner.html" data-toggle="modal" class="mobilemenu__link" title="Careers">Change password</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="#modal__saveprofile" data-toggle="modal" class="mobilemenu__link" title="Save profile (modal sample)">Save profile</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- endpartial: mobilemenu -->
+    <script>
+      (function(b, o, i, l, e, r)
+      {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] = function()
+        {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;v=3&amp;libraries=places"></script>
+    <script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.rawgit.com/moment/moment/develop/locale/it.js"></script>
+    <!-- @dev just for demo -->
+    <script src="scripts/app.js?v=2b1b3471f35d55ffb82fd5f97b7e5744"></script>
+  </body>
+</html>

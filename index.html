@@ -1,0 +1,805 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Taxi 2 Airport</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="kuus <kunderikuus@gmail.com> (http://kunderikuus.net)">
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel='stylesheet' href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css' />
+    <!-- @dev just for demo -->
+    <link rel="stylesheet" href="styles/app.css?v=a53c9871d8e817f100dc350eddba8f4d"> </head>
+  <body class="page--home">
+    <div class="c-offcanvas-content-wrap">
+      <!-- partial: header -->
+      <header class="header">
+        <nav class="navbar navbar-toggleable-md">
+          <div class="container">
+            <button class="navbar-toggler navbar-toggler-right btn js-offcanvas-trigger" data-offcanvas-trigger="mobilemenu" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> Menu </button>
+            <div class="navbar-header">
+              <a href="" class="navbar-brand">taxi2airport.com
+                <img class="logo" src="images/T2A-color.svg" alt="">
+              </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="">Schedule a taxi</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbar_support" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                  <div class="dropdown-menu" aria-labelledby="navbar_support">
+                    <a class="dropdown-item" href="support.html">Customer support</a>
+                    <a class="dropdown-item" href="#modal__editbooking" data-toggle="modal">Edit booking</a>
+                    <a class="dropdown-item" href="#modal__changepassword" data-toggle="modal">Change password</a>
+                    <a class="dropdown-item" href="#modal__saveprofile" data-toggle="modal">Save profile</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="" id="navbar_workwithus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Work with us</a>
+                  <div class="dropdown-menu" aria-labelledby="navbar_workwithus">
+                    <a class="dropdown-item" href="join-driver.html">Become a Partner</a>
+                    <a class="dropdown-item" href="join-affiliates.html">Become an Affiliate</a>
+                    <a class="dropdown-item" href="join-agents.html">Partner login</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <ul class="navbar-nav ml-auto navbar__login">
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">
+                  <i class="icon icon-profile"></i> Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- endpartial: header -->
+      <!--[if lt IE 9]>
+      <div class="alert alert-warning browserupgrade text-center"><p><small>You are using an <strong>outdated</strong> browser. Please <a class="text-danger" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</small></p></div>
+    <![endif]-->
+      <article class="container-fluid">
+        <div class="row content__row content__row--intro">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h1 class="title title--dark intro__title">
+                  <mark>Reliable</mark> transfers to and from the airport at low prices.</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-8 col-lg-7">
+                <p class="intro__text hidden-sm-down">Our name might say airport, but we also offer transfer service to train stations and ports.</p>
+              </div>
+              <div class="col-12 col-md-4 col-lg-5">
+                <div class="hidden-md-up">
+                  <!-- macro: certifiedpartner -->
+                  <div class="certifiedpartner certifiedpartner--tui">
+                    <img class="certifiedpartner__logo" src="images/partner_tui.png" title="tui"> Certified Partner </div>
+                  <!-- endmacro -->
+                </div>
+                <img class="intro__img hidden-sm-down" src="images/T2A-Pin-2.gif"> </div>
+            </div>
+          </div>
+        </div>
+        <div id="book" class="row content__row content__row--booking">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <!-- partial: booking -->
+                <form class="booking form-validate">
+                  <!-- partialarea: form::tabs -->
+                  <div class="booking__where">
+                    <h3 class="booking__title">Schedule your taxi:</h3>
+                    <div class="row">
+                      <div class="col-11">
+                        <!-- macro: form_group -->
+                        <div class="form-group has-feedback">
+                          <label for="from_address" class="control-label">Pick up:</label>
+                          <input type="text" name="from_address" id="from_address" class="form-control" placeholder="Address, place or airport"> </div>
+                        <!-- endmacro: form_group -->
+                        <!-- macro: form_group -->
+                        <div class="form-group has-feedback">
+                          <label for="to_address" class="control-label">Destination:</label>
+                          <input type="text" name="to_address" id="to_address" class="form-control" placeholder="Address, place or airport"> </div>
+                        <!-- endmacro: form_group -->
+                      </div>
+                      <div class="col-1 booking__switch" title="Switch"></div>
+                    </div>
+                  </div>
+                  <div class="booking__when">
+                    <h3 class="booking__title">When:
+                      <span class="booking__title-sub">Choose your pick up time</span>
+                    </h3>
+                    <div class="row">
+                      <!-- macro: form_group__booking_date -->
+                      <div class="form-group booking__when--date col-6">
+                        <div id="group_date_outbound" class="input-group--seamless">
+                          <div class="input-group-addon">
+                            <img src="images/icons/calendar-grey.svg">
+                          </div>
+                          <input type="text" name="date_outbound" id="date_outbound" class="form-control datepicker" placeholder="Select Date" required readonly> </div>
+                      </div>
+                      <!-- endmacro: form_group__booking_date -->
+                      <!-- macro: form_group__booking_time -->
+                      <div class="form-group booking__when--time col-6">
+                        <div id="group_time_outbound" class="input-group--seamless">
+                          <div class="input-group-addon">
+                            <img src="images/icons/clock-grey.svg">
+                          </div>
+                          <input type="text" name="time_outbound" id="time_outbound" class="form-control timepicker" placeholder="Select Time" required readonly> </div>
+                      </div>
+                      <!-- endmacro: form_group__booking_time -->
+                    </div>
+                  </div>
+                  <div class="booking__who">
+                    <h3 class="booking__title">Passengers:</h3>
+                    <div class="form-group form-group--passengers">
+                      <label class="control-label-custom">
+                        <input type="radio" class="form-control" name="passengers" value="1-3" checked>
+                        <div class="btn form-control-custom">
+                          <i class="icon icon-persons"></i> 1-3</div>
+                      </label>
+                      <label class="control-label-custom">
+                        <input type="radio" class="form-control" name="passengers" value="4-10">
+                        <div class="btn form-control-custom">
+                          <i class="icon icon-persons"></i> 4-10</div>
+                      </label>
+                      <label class="control-label-custom">
+                        <input type="radio" class="form-control" name="passengers" value="11+">
+                        <div class="btn form-control-custom">
+                          <i class="icon icon-persons"></i> 11+</div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="bookin__roundtrip">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="round_trip" id="round_trip" class="styled" data-toggle="collapse" data-target="#booking__return" aria-expanded="false">
+                        <label class="control-label" for="round_trip">Book a round trip</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="booking__return" class="booking__return collapse">
+                    <h3 class="booking__title">Return:
+                      <span class="booking__title-sub">Choose your pick up time</span>
+                    </h3>
+                    <div class="row">
+                      <!-- macro: form_group__booking_date -->
+                      <div class="form-group booking__when--date col-6">
+                        <div id="group_date_return" class="input-group--seamless">
+                          <div class="input-group-addon">
+                            <img src="images/icons/calendar-grey.svg">
+                          </div>
+                          <input type="text" name="date_return" id="date_return" class="form-control datepicker" placeholder="Select Date" required readonly> </div>
+                      </div>
+                      <!-- endmacro: form_group__booking_date -->
+                      <!-- macro: form_group__booking_time -->
+                      <div class="form-group booking__when--time col-6">
+                        <div id="group_time_return" class="input-group--seamless">
+                          <div class="input-group-addon">
+                            <img src="images/icons/clock-grey.svg">
+                          </div>
+                          <input type="text" name="time_return" id="time_return" class="form-control timepicker" placeholder="Select Time" required readonly> </div>
+                      </div>
+                      <!-- endmacro: form_group__booking_time -->
+                    </div>
+                  </div>
+                  <!-- partialarea: form::submit -->
+                  <div class="form-group">
+                    <!-- @dev: this should be  a <button type="submit"></button> -->
+                    <a href="transfer.html" class="btn btn-lg btn-accent btn-block">Search for fares</a>
+                  </div>
+                  <p class="text-center booking__info">You will be able to customise your order on the next screen</p>
+                </form>
+                <!-- endpartial: booking -->
+              </div>
+              <div class="col-md-5 col-lg-5">
+                <!-- macro: promo -->
+                <div class="promo hidden-md-down">
+                  <div class="promo__amount">10% off</div>
+                  <div class="promo__title">Your first booking</div>
+                  <div class="promo__code">Use promo code: T2ANEW</div>
+                </div>
+                <!-- endmacro -->
+                <!-- macro: list__with_checkmarks -->
+                <ul class="list--with-checkmarks">
+                  <li>
+                    <h4 class="h5 font-sans text-dark">Save up to 65%</h4>
+                    <p>We will find you the cheapest airport transfers with our verified partners!</p>
+                  </li>
+                  <li>
+                    <h4 class="h5 font-sans text-dark">Over 250,000 transfers</h4>
+                    <p>We continue to get customers to and from the airport on time!</p>
+                  </li>
+                  <li>
+                    <h4 class="h5 font-sans text-dark">Available around the globe</h4>
+                    <p>We have partners in many popular cities around the world.</p>
+                  </li>
+                  <li>
+                    <h4 class="h5 font-sans text-dark">24/7 Customer Support</h4>
+                    <p>We are always available to help you with your transfer</p>
+                  </li>
+                </ul>
+                <!-- endmacro -->
+              </div>
+            </div>
+            <!-- macro: partners -->
+            <div class="row partners">
+              <div class="col-md-5 my-2 text-md-right">
+                <h5 class="font-sans text-dark">Our preferred partners</h5>
+              </div>
+              <div class="col-md-6 offset-md-1 my-2 text-md-left">
+                <img class="partners__logo" src="images/partner_goedIdeeReizen.png" alt="goedIdeeReizen" title="goedIdeeReizen">
+                <img class="partners__logo" src="images/partner_tui.png" alt="tui" title="tui">
+                <img class="partners__logo" src="images/partner_kras.png" alt="kras" title="kras"> </div>
+            </div>
+            <!-- endmacro -->
+          </div>
+        </div>
+        <!-- macro: content__row_howdoesitwork -->
+        <div class="row bg-grey content__row content__row--howdoesitwork">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 text-center">
+                <h5 class="title--small">How does it work?</h5>
+                <h3 class="title title--red h1 mb-3 mb-md-5">Our customers save 35% on average</h3>
+              </div>
+              <!-- macro: feature -->
+              <div class="col-sm-4 media-feature">
+                <div class="feature-img-wrap">
+                  <img class="feature-img" src="images/icons/device-hand.svg"> </div>
+                <h4 class="feature-text">Schedule your transfer in advance to or from the airport, station or harbor.</h4>
+              </div>
+              <!-- endmacro -->
+              <!-- macro: feature -->
+              <div class="col-sm-4 media-feature">
+                <div class="feature-img-wrap">
+                  <img class="feature-img" src="images/icons/options.svg"> </div>
+                <h4 class="feature-text">Choose your car type and other options your need for the transfer</h4>
+              </div>
+              <!-- endmacro -->
+              <!-- macro: feature -->
+              <div class="col-sm-4 media-feature">
+                <div class="feature-img-wrap">
+                  <img class="feature-img" src="images/icons/flight.svg"> </div>
+                <h4 class="feature-text">Complete your order and enjoy the trip!</h4>
+              </div>
+              <!-- endmacro -->
+            </div>
+          </div>
+        </div>
+        <!-- endmacro: content__row_howdoesitwork -->
+        <!-- macro: content__row_subscribe -->
+        <div class="row bg-red content__row content__row--info">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <!-- macro: list__with_icons -->
+                <ul class="list--with-icons">
+                  <li>
+                    <img class="icon" src="images/icons/heart-2.svg">
+                    <h5 class="font-sans">Refer a friend</h5>
+                    <p>Earn credits towards your next taxi</p>
+                  </li>
+                  <li>
+                    <img class="icon" src="images/icons/business-pin.svg">
+                    <h5 class="font-sans">Travelling for business?</h5>
+                    <p>See our enterprise features</p>
+                  </li>
+                </ul>
+                <!-- endmacro -->
+              </div>
+              <div class="col-12 col-md-6">
+                <h5 class="font-sans">Subscribe for weekly exclusive offers:</h5>
+                <!-- macro: newsletter -->
+                <form class="newsletter form-inline">
+                  <label class="hidden-sm-down" for="newsletter_email">Please enter your email address:</label>
+                  <input id="newsletter_email" type="email" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Your email address">
+                  <button type="submit" class="btn btn-white-outline">Subscribe</button>
+                </form>
+                <!-- endmacro -->
+                <!-- macro: follow_us -->
+                <ul class="list-inline follow hidden-md-down">
+                  <li class="list-inline-item follow__item">Follow us:</li>
+                  <li class="list-inline-item follow__item">
+                    <a class="follow__link" href="https://www.facebook.com/taxi2airportcom/" title="Facebook">
+                      <i class="icon icon-brand-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item follow__item">
+                    <a class="follow__link" href="https://twitter.com/Taxi2Airport" title="Twitter">
+                      <i class="icon icon-brand-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item follow__item">
+                    <a class="follow__link" href="https://www.linkedin.com/company-beta/2657964/" title="LinkedIn">
+                      <i class="icon icon-brand-linkedin"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item follow__item">
+                    <a class="follow__link" href="https://plus.google.com/112745390609204203588" title="Google +">
+                      <i class="icon icon-brand-google-plus"></i>
+                    </a>
+                  </li>
+                </ul>
+                <!-- endmacro -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- endmacro: content__row_subscribe -->
+        <!-- macro: content__row_airports -->
+        <div class="row bg-grey content__row content__row--airports">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 jumbotron">
+                <h3 class="title title--red h1">Top Airports</h3>
+                <h5 class="h6 font-sans font-weight-normal">We are available worldwide for all popular airport transfers with competitive pricing, including:</h5>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="row carousel">
+                  <!-- macro: card_airport -->
+                  <div class="airport col-lg-3 dragend-page">
+                    <div class="card">
+                      <div class="airport__inner" href="airport.html">
+                        <h3 class="airport__name">
+                          <a href="airport.html">London Heathrow</a>
+                        </h3>
+                        <a class="airport__action btn-link" href="airport.html">Book a transfer</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- endmacro -->
+                  <!-- macro: card_airport -->
+                  <div class="airport col-lg-3 dragend-page">
+                    <div class="card">
+                      <div class="airport__inner" href="airport.html">
+                        <h3 class="airport__name">
+                          <a href="airport.html">Schipol Airport</a>
+                        </h3>
+                        <a class="airport__action btn-link" href="airport.html">Book a transfer</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- endmacro -->
+                  <!-- macro: card_airport -->
+                  <div class="airport col-lg-3 dragend-page">
+                    <div class="card">
+                      <div class="airport__inner" href="airport.html">
+                        <h3 class="airport__name">
+                          <a href="airport.html">Oslo Airport</a>
+                        </h3>
+                        <a class="airport__action btn-link" href="airport.html">Book a transfer</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- endmacro -->
+                  <!-- macro: card_airport -->
+                  <div class="airport col-lg-3 dragend-page">
+                    <div class="card">
+                      <div class="airport__inner" href="airport.html">
+                        <h3 class="airport__name">
+                          <a href="airport.html">Adolfo Suarez Madrid-Barajas</a>
+                        </h3>
+                        <a class="airport__action btn-link" href="airport.html">Book a transfer</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- endmacro -->
+                  <!-- macro: card_airport -->
+                  <div class="airport col-lg-3 dragend-page">
+                    <div class="card">
+                      <div class="airport__inner" href="airport.html">
+                        <h3 class="airport__name">
+                          <a href="airport.html">Istanbul Ataturk</a>
+                        </h3>
+                        <a class="airport__action btn-link" href="airport.html">Book a transfer</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- endmacro -->
+                  <!-- macro: card_airport -->
+                  <div class="airport col-lg-3 dragend-page">
+                    <div class="card">
+                      <div class="airport__inner" href="airport.html">
+                        <h3 class="airport__name">
+                          <a href="airport.html">JFK International Airport</a>
+                        </h3>
+                        <a class="airport__action btn-link" href="airport.html">Book a transfer</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- endmacro -->
+                  <!-- macro: card_airport -->
+                  <div class="airport col-lg-3 dragend-page">
+                    <div class="card">
+                      <div class="airport__inner" href="airport.html">
+                        <h3 class="airport__name">
+                          <a href="airport.html">Leonardo da Vinci-Fiumicino</a>
+                        </h3>
+                        <a class="airport__action btn-link" href="airport.html">Book a transfer</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- endmacro -->
+                  <!-- macro: card_airport -->
+                  <div class="airport col-lg-3 dragend-page">
+                    <div class="card">
+                      <div class="airport__inner" href="airport.html">
+                        <h3 class="airport__name">
+                          <a href="airport.html">London Heathrow</a>
+                        </h3>
+                        <a class="airport__action btn-link" href="airport.html">Book a transfer</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- endmacro -->
+                </div>
+                <a class="hidden-lg-up" href="#">
+                  <b>View all Airports</b>
+                  <i class="icon icon-arrow_forward text-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- endmacro: content__row_airports -->
+      </article>
+      <!-- partial: colophon -->
+      <div class="colophon">
+        <div class="container">
+          <h4 class="title title--dark">Customer Service</h4>
+          <div class="row">
+            <!-- macro: country_phone_link -->
+            <div class="country-phone col-sm-6 col-lg-4">
+              <div class="media">
+                <div class="media-left">
+                  <span class="flagsvg flagsvg-gb"></span>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <a href="tel:+31 883 188 331">English</a>
+                  </h5>
+                  <a class="tel" href="tel:+31 883 188 331">+31 883 188 331</a>
+                </div>
+              </div>
+            </div>
+            <!-- endmacro -->
+            <!-- macro: country_phone_link -->
+            <div class="country-phone col-sm-6 col-lg-4">
+              <div class="media">
+                <div class="media-left">
+                  <span class="flagsvg flagsvg-nl"></span>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <a href="tel:+31 883 188 331">Dutch</a>
+                  </h5>
+                  <a class="tel" href="tel:+31 883 188 331">+31 883 188 331</a>
+                </div>
+              </div>
+            </div>
+            <!-- endmacro -->
+            <!-- macro: country_phone_link -->
+            <div class="country-phone col-sm-6 col-lg-4">
+              <div class="media">
+                <div class="media-left">
+                  <span class="flagsvg flagsvg-fr"></span>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <a href="tel:+31 883 188 331">French</a>
+                  </h5>
+                  <a class="tel" href="tel:+31 883 188 331">+31 883 188 331</a>
+                </div>
+              </div>
+            </div>
+            <!-- endmacro -->
+            <!-- macro: country_phone_link -->
+            <div class="country-phone col-sm-6 col-lg-4">
+              <div class="media">
+                <div class="media-left">
+                  <span class="flagsvg flagsvg-es"></span>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <a href="tel:+31 883 188 331">Spanish</a>
+                  </h5>
+                  <a class="tel" href="tel:+31 883 188 331">+31 883 188 331</a>
+                </div>
+              </div>
+            </div>
+            <!-- endmacro -->
+            <!-- macro: country_phone_link -->
+            <div class="country-phone col-sm-6 col-lg-4">
+              <div class="media">
+                <div class="media-left">
+                  <span class="flagsvg flagsvg-be"></span>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <a href="tel:+31 883 188 331">Belgium</a>
+                  </h5>
+                  <a class="tel" href="tel:+31 883 188 331">+31 883 188 331</a>
+                </div>
+              </div>
+            </div>
+            <!-- endmacro -->
+            <!-- macro: country_phone_link -->
+            <div class="country-phone col-sm-6 col-lg-4">
+              <div class="media">
+                <div class="media-left">
+                  <span class="flagsvg flagsvg-pt"></span>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <a href="tel:+31 883 188 331">Português</a>
+                  </h5>
+                  <a class="tel" href="tel:+31 883 188 331">+31 883 188 331</a>
+                </div>
+              </div>
+            </div>
+            <!-- endmacro -->
+          </div>
+          <h4 class="title title--dark text-center my-3">What others are saying</h4>
+          <!-- macro: trustpilot -->
+          <span id="trustpilot_small_loader_lg">
+            <div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad60defb9600b94d7df2c" data-businessunit-id="56a73ef10000ff00058818ba" data-style-height="88px" data-style-width="100%" data-tags="" data-stars="4,5,3"></div>
+          </span>
+          <!-- endmacro -->
+        </div>
+      </div>
+      <!-- endpartial: colophon -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-lg-12 content__col content__col--about">
+            <!-- macro: content__row_about -->
+            <div class="row content__row content__row--about">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-lg-8 offset-lg-2">
+                    <h3 class="title text-dark pb-lg-3">About Taxi2Airport</h3>
+                    <p class="readmore">Planning to go on holiday by plane, or perhaps on family visit or for another reason abroad? Then you probably need to go to the airport to catch your flight. But how will you get there? Letting someone bring you or pick you up is
+                      not always possible and parking your own car at the airport is not a cheap solution. Then you can choose for an airport transfer by an experience holiday taxi company. A taxi will pick you up at your home address whenever you want
+                      and will take you to the airport you need to go. TAXI2AIRPORT.COM stands for reliable service and security. Your transportation to the airport can’t start better; leave the rest to our airport shuttle. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- endmacro: content__row_about -->
+          </div>
+          <div class="col-md-6 col-lg-12 content__col content__col--aroundglobe">
+            <!-- macro: content__row_aroundglobe -->
+            <div class="row bg-red content__row content__row--around">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-12 col-lg-8 offset-lg-2">
+                    <img src="images/icons/globe-white.svg">
+                    <h3 class="title py-3">Available around the globe</h3>
+                    <p>TAXI2AIRPORT.COM is an online reservation and booking system for airport transfers all around the globe. We are committed to provide safe and reliable transfers over all area's to and from all airports and cruise ports. Our pricing
+                      is competitive and we offer special rates to high volume clients.</p>
+                    <p>Taxi2airport rated 4.5/5 based on 670 reviews</p>
+                    <br>
+                    <a href="" class="btn btn-white-outline">More About Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- endmacro: content__row_aroundglobe -->
+          </div>
+        </div>
+      </div>
+      <!-- partial: footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="row footer__top">
+            <div class="col-md-6">
+              <img src="images/T2A-white.svg" alt="Taxi2airport logo" width="206"> </div>
+            <div class="col-md-6 footer__top-links text-md-right hidden-sm-down">
+              <a href="">Schedule a taxi</a>
+              <a href="login.html">Login</a>
+            </div>
+            <div class="col-md-6 footer__top-links text-md-right hidden-md-up">
+              <a href="#">Customer Service</a>
+              <a href="about.html">About Us</a>
+            </div>
+          </div>
+          <nav class="row footer__middle">
+            <div class="col-md-4 hidden-sm-down">
+              <h4 class="footer__list-title">Support</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="#">Customer Service</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="faq.html">FAQs</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Feedback</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4 class="footer__list-title">Work with us</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="join-driver.html">Become a Partner</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="join-affiliates.html">Become an Affiliate</a>
+                </li>
+                <li class="hidden-md-up">
+                  <a class="footer__list-link" href="join-agents.html">Partner login</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Careers</a>
+                </li>
+                <li class="hidden-sm-down">
+                  <a class="footer__list-link" href="about.html">About Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4 class="footer__list-title">Legal</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="#">Terms and conditions</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="row footer__bottom">
+            <div class="col">
+              <strong>
+                <small>&copy; 2003 -
+                  <span id="copy-year">2017</span> by Taxi2airport B.V.
+                  <br>All rights reserved</small>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- endpartial: footer -->
+    </div>
+    <!-- partial: mobilemenu -->
+    <aside id="mobilemenu" class="js-offcanvas mobilemenu" data-offcanvas-options='{ "modifiers": "right,push" }'>
+      <button class="js-offcanvas-close btn mobilemenu__close">
+        <i class="icon icon-close"></i>
+      </button>
+      <nav>
+        <div class="mobilemenu__lang">
+          <div class="mobilemenu__lang-current" data-toggle="collapse" data-target="#lang-selector">
+            <i class="flagsvg flagsvg-gb"></i>
+            <span class="mobilemenu__lang-text">English</span>
+            <i class="icon"></i>
+          </div>
+          <div id="lang-selector" class="mobilemenu__lang-list collapse">
+            <a class="mobilemenu__lang-link" href="#nl" title="Dutch">
+              <i class="flagsvg flagsvg-nl"></i> Dutch </a>
+            <a class="mobilemenu__lang-link" href="#fr" title="French">
+              <i class="flagsvg flagsvg-fr"></i> French </a>
+            <a class="mobilemenu__lang-link" href="#es" title="Spanish">
+              <i class="flagsvg flagsvg-es"></i> Spanish </a>
+            <a class="mobilemenu__lang-link" href="#be" title="Belgium">
+              <i class="flagsvg flagsvg-be"></i> Belgium </a>
+            <a class="mobilemenu__lang-link" href="#pt" title="Português">
+              <i class="flagsvg flagsvg-pt"></i> Português </a>
+          </div>
+        </div>
+        <ul class="mobilemenu__list">
+          <li class="mobilemenu__item">
+            <img class="mobilemenu__img" src="images/T2A-Mark-black.svg">
+            <a href="" class="mobilemenu__link">Schedule a Taxi</a>
+          </li>
+          <li class="mobilemenu__item">
+            <img class="mobilemenu__img" src="images/icons/profile.svg">
+            <a href="login.html" class="mobilemenu__link">Login</a>
+          </li>
+          <li class="mobilemenu__item">
+            <div class="mobilemenu__heading">Support</div>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="" class="mobilemenu__link">Customer Service</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="faq.html" class="mobilemenu__link">FAQs</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="" class="mobilemenu__link">Feedback</a>
+          </li>
+          <li class="mobilemenu__item">
+            <div class="mobilemenu__heading">Work with us</div>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-driver.html" class="mobilemenu__link">Become a Partner</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-affiliates.html" data-toggle="modal" class="mobilemenu__link" title="Become an Affiliate">Edit booking</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-partner.html" data-toggle="modal" class="mobilemenu__link" title="Careers">Change password</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="#modal__saveprofile" data-toggle="modal" class="mobilemenu__link" title="Save profile (modal sample)">Save profile</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- endpartial: mobilemenu -->
+    <script>
+      (function(b, o, i, l, e, r)
+      {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] = function()
+        {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;v=3&amp;libraries=places"></script>
+    <script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.rawgit.com/moment/moment/develop/locale/it.js"></script>
+    <!-- @dev just for demo -->
+    <script src="scripts/app.js?v=2b1b3471f35d55ffb82fd5f97b7e5744"></script>
+    <!-- @dev begin: just for demo -->
+    <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-autocomplete-from" tabindex="0" style="margin-left: 0px; padding-left: 0px; width: width: 336px; top: 485px; left: 186px">
+      <li onmousedown="setFromOrTo('1482', '1', 'VVO: Vladivostok International Airport', '43.396342', '132.165372', 'from');" class="ui-menu-item" tabindex="-1" style="padding-left: 0; margin-left: 0;">
+        <a style="padding: 6px;">
+          <img src="images/icons/plane.svg" alt="" style="height: 20px;"> VVO: Vladivostok International Airport</a>
+      </li>
+      <li onmousedown="setFromOrToWithPlaceId('ChIJPbHiKvexe0gRe-0VarZSXUY', 'Asda Hulme Superstore, Princess Road, Manchester, United Kingdom', 'from');" class="ui-menu-item" tabindex="-1" style="padding-left: 0; margin-left: 0;">
+        <a style="padding: 6px;">
+          <img src="images/icons/map-pin.svg" alt="" style="height: 20px;"> Asda Hulme Superstore, Princess Road, Manchester, United Kingdom</a>
+      </li>
+      <li onmousedown="setFromOrToWithPlaceId('ChIJybbuY70CdkgRUHsmvZmOFzc', 'Asda Isle of Dogs Superstore, London, United Kingdom', 'from');" class="ui-menu-item" tabindex="-1" style="padding-left: 0; margin-left: 0;">
+        <a style="padding: 6px;">
+          <img src="images/icons/map-pin.svg" alt="" style="height: 20px;"> Asda Isle of Dogs Superstore, London, United Kingdom</a>
+      </li>
+      <li onmousedown="setFromOrToWithPlaceId('ChIJbVzHDc9UdkgRUbI6q282Pj4', 'Asda Milton Keynes Supercentre, Bletcham Way, Milton Keynes, United Kingdom', 'from');" class="ui-menu-item" tabindex="-1" style="padding-left: 0; margin-left: 0;">
+        <a style="padding: 6px;">
+          <img src="images/icons/map-pin.svg" alt="" style="height: 20px;"> Asda Milton Keynes Supercentre, Bletcham Way, Milton Keynes, United Kingdom</a>
+      </li>
+      <li onmousedown="setFromOrToWithPlaceId('ChIJb_iYL-4RdkgRfILoKI4ebYM', 'Asda, Western Road, London, United Kingdom', 'from');" class="ui-menu-item" tabindex="-1" style="padding-left: 0; margin-left: 0;">
+        <a style="padding: 6px;">
+          <img src="images/icons/map-pin.svg" alt="" style="height: 20px;"> Asda, Western Road, London, United Kingdom</a>
+      </li>
+      <li onmousedown="setFromOrToWithPlaceId('ChIJg613SG0DdkgR-uNATcMOpak', 'Asda Old Kent Road Superstore, Old Kent Road, London, United Kingdom', 'from');" class="ui-menu-item" tabindex="-1" style="padding-left: 0; margin-left: 0;">
+        <a style="padding: 6px;">
+          <img src="images/icons/map-pin.svg" alt="" style="height: 20px;"> Asda Old Kent Road Superstore, Old Kent Road, London, United Kingdom</a>
+      </li>
+    </ul>
+    <script>
+      (function($)
+      {
+        var a = $('#ui-autocomplete-from').hide();
+        $('#from_address').focus(function()
+        {
+          a.show()
+        }).focusout(function()
+        {
+          a.hide()
+        });
+      }($));
+    </script>
+    <!-- @dev end: just for demo -->
+  </body>
+</html>

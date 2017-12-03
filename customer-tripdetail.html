@@ -1,0 +1,518 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Taxi 2 Airport</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="kuus <kunderikuus@gmail.com> (http://kunderikuus.net)">
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel='stylesheet' href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css' />
+    <!-- @dev just for demo -->
+    <link rel="stylesheet" href="styles/app.css?v=a53c9871d8e817f100dc350eddba8f4d"> </head>
+  <body class="page--customer page--customer-tripdetail">
+    <div class="c-offcanvas-content-wrap">
+      <!-- partial: header -->
+      <header class="header">
+        <nav class="navbar navbar-toggleable-md">
+          <div class="container">
+            <button class="navbar-toggler navbar-toggler-right btn js-offcanvas-trigger" data-offcanvas-trigger="mobilemenu" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> Menu </button>
+            <div class="navbar-header">
+              <a href="" class="navbar-brand">taxi2airport.com
+                <img class="logo" src="images/T2A-color.svg" alt="">
+              </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="">Schedule a taxi</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbar_support" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                  <div class="dropdown-menu" aria-labelledby="navbar_support">
+                    <a class="dropdown-item" href="support.html">Customer support</a>
+                    <a class="dropdown-item" href="#modal__editbooking" data-toggle="modal">Edit booking</a>
+                    <a class="dropdown-item" href="#modal__changepassword" data-toggle="modal">Change password</a>
+                    <a class="dropdown-item" href="#modal__saveprofile" data-toggle="modal">Save profile</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="" id="navbar_workwithus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Work with us</a>
+                  <div class="dropdown-menu" aria-labelledby="navbar_workwithus">
+                    <a class="dropdown-item" href="join-driver.html">Become a Partner</a>
+                    <a class="dropdown-item" href="join-affiliates.html">Become an Affiliate</a>
+                    <a class="dropdown-item" href="join-agents.html">Partner login</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <ul class="navbar-nav ml-auto navbar__login">
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">
+                  <i class="icon icon-profile"></i> Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- endpartial: header -->
+      <!--[if lt IE 9]>
+      <div class="alert alert-warning browserupgrade text-center"><p><small>You are using an <strong>outdated</strong> browser. Please <a class="text-danger" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</small></p></div>
+    <![endif]-->
+      <!-- macro: customer__hello -->
+      <div class="container customer__hello ">
+        <div class="row">
+          <nav class="col-12">
+            <h1>
+              <span class="customer__hello-subtitle">Welcome back,</span>
+              <span class="customer__hello-title">Michael</span>
+            </h1>
+          </nav>
+        </div>
+      </div>
+      <!-- endmacro: customer__hello -->
+      <!-- macro: customer__tabs -->
+      <nav class="customer__tabs ">
+        <div class="container">
+          <ul class="nav nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" href="/customer-dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Transfers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/customer-profile.html">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- endmacro: customer__tabs -->
+      <article class="container-fluid customer__content bg-grey">
+        <div class="row">
+          <div class="container customer__container--narrow">
+            <div class="row tripdetail">
+              <div class="col-12 col-lg-10 offset-lg-1 tripdetail__back">
+                <a href="customer-transfers.html" class="btn btn-link link-iconed">
+                  <i class="icon icon-arrow_back"></i>
+                  <span>
+                    <!--Back-->
+                  </span>
+                </a>
+                <div class="hidden-md-up">
+                  <!-- macro: tripdetail__actions -->
+                  <div class="tripdetail__actions">
+                    <a class="btn btn-link" href="#modal__editbooking" data-toggle="modal">Edit</a>
+                    <a class="btn btn-link" href="javascript:window.print()">Print</a>
+                    <a class="btn btn-link" href="#">Invoice</a>
+                  </div>
+                  <!-- endmacro: tripdetail__actions -->
+                </div>
+              </div>
+              <div class="col-12 col-lg-10 offset-lg-1 tripdetail__col">
+                <div class="tripdetail__content bg-white">
+                  <div class="tripdetail__bar tripdetail__bar--header hidden-sm-down">
+                    <h3 class="title--light">Transfer Receipt</h3>
+                    <!-- macro: tripdetail__actions -->
+                    <div class="tripdetail__actions">
+                      <a class="btn btn-link" href="#modal__editbooking" data-toggle="modal">Edit</a>
+                      <a class="btn btn-link" href="javascript:window.print()">Print</a>
+                      <a class="btn btn-link" href="#">Invoice</a>
+                    </div>
+                    <!-- endmacro: tripdetail__actions -->
+                  </div>
+                  <div class="tripdetail__body">
+                    <div class="row">
+                      <div class="col-md-6 tripdetail__from">
+                        <!-- macro: booking__summary_pickup -->
+                        <div class="summary__row summary__row--pickup">
+                          <h5>Pickup</h5>
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="images/icons/plane.svg"> </div>
+                            <div class="media-body">
+                              <h4 data-js-pickup>Amsterdam Airport Schipol (AMS)</h4>
+                              <p class="hidden-sm-down">
+                                <span data-js-date>18 May 2017</span>
+                                <span>@
+                                  <time data-js-time>10:00</time>
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- endmacro -->
+                      </div>
+                      <div class="col-md-6 tripdetail__to">
+                        <!-- macro: booking__summary_destination -->
+                        <div class="summary__row summary__row--destination">
+                          <h5>Destination</h5>
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="images/icons/map-pin.svg"> </div>
+                            <div class="media-body">
+                              <h4 data-js-destination>Julius Pergerstraat 139, 1087KN Amsterdam, Netherlands</h4>
+                              <p>Distance:
+                                <span data-js-distance>>24.42 km / 15.17 mile</span</p>
+                                  <p>Probable duration:
+                                    <span data-js-duration>23</span> mins</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- endmacro -->
+                      </div>
+                    </div>
+                    <!-- macro: booking__summary_vehicle -->
+                    <div class="summary__row summary__row--vehicle">
+                      <h5>Vehicle type</h5>
+                      <h4 data-js-vehicle>Sedan</h4>
+                      <div class="summary__vehicleinfo">
+                        <p>
+                          <span class="vehicle__persons">
+                            <span data-js-persons>1-3</span> persons</span>
+                          <span class="vehicle__bags">
+                            <span data-js-bags>4</span> bags</span>
+                        </p>
+                      </div>
+                    </div>
+                    <!-- endmacro -->
+                    <!-- macro: booking__summary_payment -->
+                    <div class="summary__row summary__row--payment">
+                      <h5>Payment</h5>
+                      <h4 data-js-payment>Visa</h4>
+                      <p data-js-cardnumber>xxxx-xxxx-xxxx-4212</p>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>Amount paid:</td>
+                            <td>&euro;
+                              <span data-js-paid>48</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>To be paid in taxi:</td>
+                            <td>&euro;
+                              <span data-js-topay>0</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- endmacro -->
+                  </div>
+                  <div class="tripdetail__bar tripdetail__bar--footer">
+                    <!-- macro: tripdetail__actions -->
+                    <div class="tripdetail__actions">
+                      <a class="btn btn-link" href="#modal__editbooking" data-toggle="modal">Edit</a>
+                      <a class="btn btn-link" href="javascript:window.print()">Print</a>
+                      <a class="btn btn-link" href="#">Invoice</a>
+                    </div>
+                    <!-- endmacro: tripdetail__actions -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="container-fluid">
+        <!-- macro: content__row_subscribe -->
+        <div class="row bg-red content__row content__row--info">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <!-- macro: list__with_icons -->
+                <ul class="list--with-icons">
+                  <li>
+                    <img class="icon" src="images/icons/heart-2.svg">
+                    <h5 class="font-sans">Refer a friend</h5>
+                    <p>Earn credits towards your next taxi</p>
+                  </li>
+                  <li>
+                    <img class="icon" src="images/icons/business-pin.svg">
+                    <h5 class="font-sans">Travelling for business?</h5>
+                    <p>See our enterprise features</p>
+                  </li>
+                </ul>
+                <!-- endmacro -->
+              </div>
+              <div class="col-12 col-md-6">
+                <h5 class="font-sans">Subscribe for weekly exclusive offers:</h5>
+                <!-- macro: newsletter -->
+                <form class="newsletter form-inline">
+                  <label class="hidden-sm-down" for="newsletter_email">Please enter your email address:</label>
+                  <input id="newsletter_email" type="email" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Your email address">
+                  <button type="submit" class="btn btn-white-outline">Subscribe</button>
+                </form>
+                <!-- endmacro -->
+                <!-- macro: follow_us -->
+                <ul class="list-inline follow hidden-md-down">
+                  <li class="list-inline-item follow__item">Follow us:</li>
+                  <li class="list-inline-item follow__item">
+                    <a class="follow__link" href="https://www.facebook.com/taxi2airportcom/" title="Facebook">
+                      <i class="icon icon-brand-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item follow__item">
+                    <a class="follow__link" href="https://twitter.com/Taxi2Airport" title="Twitter">
+                      <i class="icon icon-brand-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item follow__item">
+                    <a class="follow__link" href="https://www.linkedin.com/company-beta/2657964/" title="LinkedIn">
+                      <i class="icon icon-brand-linkedin"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item follow__item">
+                    <a class="follow__link" href="https://plus.google.com/112745390609204203588" title="Google +">
+                      <i class="icon icon-brand-google-plus"></i>
+                    </a>
+                  </li>
+                </ul>
+                <!-- endmacro -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- endmacro: content__row_subscribe -->
+      </div>
+      <!-- partial: footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="row footer__top">
+            <div class="col-md-6">
+              <img src="images/T2A-white.svg" alt="Taxi2airport logo" width="206"> </div>
+            <div class="col-md-6 footer__top-links text-md-right hidden-sm-down">
+              <a href="">Schedule a taxi</a>
+              <a href="login.html">Login</a>
+            </div>
+            <div class="col-md-6 footer__top-links text-md-right hidden-md-up">
+              <a href="#">Customer Service</a>
+              <a href="about.html">About Us</a>
+            </div>
+          </div>
+          <nav class="row footer__middle">
+            <div class="col-md-4 hidden-sm-down">
+              <h4 class="footer__list-title">Support</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="#">Customer Service</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="faq.html">FAQs</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Feedback</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4 class="footer__list-title">Work with us</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="join-driver.html">Become a Partner</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="join-affiliates.html">Become an Affiliate</a>
+                </li>
+                <li class="hidden-md-up">
+                  <a class="footer__list-link" href="join-agents.html">Partner login</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Careers</a>
+                </li>
+                <li class="hidden-sm-down">
+                  <a class="footer__list-link" href="about.html">About Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4 class="footer__list-title">Legal</h4>
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__list-link" href="#">Terms and conditions</a>
+                </li>
+                <li>
+                  <a class="footer__list-link" href="#">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="row footer__bottom">
+            <div class="col">
+              <strong>
+                <small>&copy; 2003 -
+                  <span id="copy-year">2017</span> by Taxi2airport B.V.
+                  <br>All rights reserved</small>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- endpartial: footer -->
+    </div>
+    <!-- partial: mobilemenu -->
+    <aside id="mobilemenu" class="js-offcanvas mobilemenu" data-offcanvas-options='{ "modifiers": "right,push" }'>
+      <button class="js-offcanvas-close btn mobilemenu__close">
+        <i class="icon icon-close"></i>
+      </button>
+      <nav>
+        <div class="mobilemenu__lang">
+          <div class="mobilemenu__lang-current" data-toggle="collapse" data-target="#lang-selector">
+            <i class="flagsvg flagsvg-gb"></i>
+            <span class="mobilemenu__lang-text">English</span>
+            <i class="icon"></i>
+          </div>
+          <div id="lang-selector" class="mobilemenu__lang-list collapse">
+            <a class="mobilemenu__lang-link" href="#nl" title="Dutch">
+              <i class="flagsvg flagsvg-nl"></i> Dutch </a>
+            <a class="mobilemenu__lang-link" href="#fr" title="French">
+              <i class="flagsvg flagsvg-fr"></i> French </a>
+            <a class="mobilemenu__lang-link" href="#es" title="Spanish">
+              <i class="flagsvg flagsvg-es"></i> Spanish </a>
+            <a class="mobilemenu__lang-link" href="#be" title="Belgium">
+              <i class="flagsvg flagsvg-be"></i> Belgium </a>
+            <a class="mobilemenu__lang-link" href="#pt" title="Português">
+              <i class="flagsvg flagsvg-pt"></i> Português </a>
+          </div>
+        </div>
+        <ul class="mobilemenu__list">
+          <li class="mobilemenu__item">
+            <img class="mobilemenu__img" src="images/T2A-Mark-black.svg">
+            <a href="" class="mobilemenu__link">Schedule a Taxi</a>
+          </li>
+          <li class="mobilemenu__item">
+            <img class="mobilemenu__img" src="images/icons/profile.svg">
+            <a href="login.html" class="mobilemenu__link">Login</a>
+          </li>
+          <li class="mobilemenu__item">
+            <div class="mobilemenu__heading">Support</div>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="" class="mobilemenu__link">Customer Service</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="faq.html" class="mobilemenu__link">FAQs</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="" class="mobilemenu__link">Feedback</a>
+          </li>
+          <li class="mobilemenu__item">
+            <div class="mobilemenu__heading">Work with us</div>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-driver.html" class="mobilemenu__link">Become a Partner</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-affiliates.html" data-toggle="modal" class="mobilemenu__link" title="Become an Affiliate">Edit booking</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="join-partner.html" data-toggle="modal" class="mobilemenu__link" title="Careers">Change password</a>
+          </li>
+          <li class="mobilemenu__item">
+            <a href="#modal__saveprofile" data-toggle="modal" class="mobilemenu__link" title="Save profile (modal sample)">Save profile</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- endpartial: mobilemenu -->
+    <!-- macro: modal__editbooking -->
+    <div id="modal__editbooking" class="modal fade modal--editbooking" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Booking?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="icon icon-close" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You will be directed to create a new booking. The current transfer will be cancelled.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-accent">Continue</button>
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- endmacro: modal__editbooking -->
+    <!-- macro: modal__changepassword -->
+    <div id="modal__changepassword" class="modal fade modal--dark modal--changepassword" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Change password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="icon icon-close" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form-validate py-3 py-lg-5">
+              <!-- macro: form_group -->
+              <div class="form-group has-feedback">
+                <label for="password" class="control-label">Password:</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder=""> </div>
+              <!-- endmacro: form_group -->
+              <!-- macro: form_group -->
+              <div class="form-group has-feedback has-success">
+                <label for="password" class="control-label">Confirm password:</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder=""> </div>
+              <!-- endmacro: form_group -->
+            </form>
+          </div>
+          <div class="modal-footer p-0">
+            <button type="button" class="btn btn-lg btn-accent" data-dismiss="modal">Change Password</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- endmacro: modal__saveprofile -->
+    <!-- macro: modal__saveprofile -->
+    <div id="modal__saveprofile" class="modal fade modal--saveprofile" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Save changes to profile?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="icon icon-close" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You have unsaved changes to your profile. Save the edits to keep them or discard to cancel the changes.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-accent" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Discard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- endmacro: modal__saveprofile -->
+    <script>
+      (function(b, o, i, l, e, r)
+      {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] = function()
+        {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;v=3&amp;libraries=places"></script>
+    <script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.sync.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.rawgit.com/moment/moment/develop/locale/it.js"></script>
+    <!-- @dev just for demo -->
+    <script src="scripts/app.js?v=2b1b3471f35d55ffb82fd5f97b7e5744"></script>
+  </body>
+</html>
